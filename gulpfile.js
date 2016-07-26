@@ -1,5 +1,3 @@
-"use strict";
-
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
@@ -19,14 +17,14 @@ var sassOptions = {
 };
 
 gulp.task("sass", function() {
-  return gulp.src("scss/**/*.scss")
+  return gulp.src("scss/styles.scss")
         .pipe(sourcemaps.init())
         .pipe(autoprefixer({
           browsers: ['last 2 versions']
         }))
         .pipe(sass(sassOptions).on("error", sass.logError))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest("css"))        
+        .pipe(gulp.dest("css"))
         .pipe(reload({stream: true}));
 });
 
@@ -40,6 +38,6 @@ gulp.task("browserSync", function() {
 
 
 gulp.task("watch", ["browserSync"], function() {
-  gulp.watch("scss/**/*.scss", ["sass"]);
+  gulp.watch("scss/styles.scss", ["sass"]);
   gulp.watch("*.html", ["html"]);
 });
