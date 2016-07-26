@@ -76,14 +76,16 @@ nav.main {
 
   .section {
     text-align: center;
-    display: flex;
-    justify-content: center;
+    display: table;
     height: 100vh;
+    margin: 0 auto;
   }
   .intro-copy {
+    display: table-cell;
+    vertical-align: middle;
     max-width: 25em;
     padding: 0 2em;
-    padding-top: 20em;
+    transform: translateY(-10%);
 
     h1 {
       font-size: 7em;
