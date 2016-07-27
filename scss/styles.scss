@@ -46,13 +46,15 @@ img {
 #header {
   display: flex;
   justify-content: space-between;
+  position: relative;
+  z-index: 10;
   // box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 a.logo {
   color: #333;
   font-size: 1.5em;
-  line-height: 56px;
+  line-height: 94px;
   padding-left: 2em;
 }
 nav.main {
@@ -66,7 +68,8 @@ nav.main {
       display: inline-block;
 
       a {
-        padding: 0 1em;
+        display: inline-block;
+        padding: 1.2em;
       }
     }
   }
