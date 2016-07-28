@@ -5,16 +5,15 @@ var gulp = require("gulp"),
     browserSync = require("browser-sync"),
     reload = browserSync.reload;
 
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: "compressed"
+};
 
 gulp.task("html", function() {
   return gulp.src("*.html")
         .pipe(reload({stream: true}));
 });
-
-var sassOptions = {
-  errLogToConsole: true,
-  outputStyle: "compressed"
-};
 
 gulp.task("sass", function() {
   return gulp.src("scss/styles.scss")
@@ -25,6 +24,11 @@ gulp.task("sass", function() {
         .pipe(sass(sassOptions).on("error", sass.logError))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest("css"))
+        .pipe(reload({stream: true}));
+});
+
+gulp.task("js", function() {
+  return gulp.src("js/main.js")
         .pipe(reload({stream: true}));
 });
 
@@ -40,4 +44,5 @@ gulp.task("browserSync", function() {
 gulp.task("watch", ["browserSync"], function() {
   gulp.watch("scss/styles.scss", ["sass"]);
   gulp.watch("*.html", ["html"]);
+  gulp.watch("js/main.js", ["js"]);
 });

@@ -3,7 +3,7 @@
 // Scroll optimization with window.requestAnimationFrame
 // Reference : https://developer.mozilla.org/en-US/docs/Web/Events/scroll
 
-var header = document.querySelector('header'),
+var header = document.querySelector('#header'),
     latestKnownScrollY = 0,
     ticking = false;
 
