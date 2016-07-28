@@ -3,17 +3,24 @@
 // Scroll optimization with window.requestAnimationFrame
 // Reference : https://developer.mozilla.org/en-US/docs/Web/Events/scroll
 
-var header = document.querySelector('#header'),
-    latestKnownScrollY = 0,
-    ticking = false;
+var body = document.querySelector('body');
+var latestKnownScrollY = 0;
+var ticking = false;
 
 function doSomething(scroll_pos) {
   // do something with the scroll position
   if(scroll_pos > 1) {
-    header.classList.add('sticky');
+    body.classList.add('is-scrolled');
   }
   else {
-    header.classList.remove('sticky');
+    body.classList.remove('is-scrolled');
+  }
+
+  if(scroll_pos < 1) {
+    body.classList.add('not-scrolled');
+  }
+  else {
+    body.classList.remove('not-scrolled');
   }
 }
 
@@ -27,3 +34,11 @@ window.addEventListener('scroll', function(e) {
   }
   ticking = true;
 });
+
+// Animate the hamburger menu
+var hamMenu = document.querySelector('.c-hamburger');
+
+hamMenu.addEventListener('click', function(e) {
+  e.preventDefault();
+  this.classList.toggle('is-active');
+})
