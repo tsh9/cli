@@ -330,6 +330,12 @@ a.logo {
   margin-top: 1em;;
 }
 
+//fullpage.js custom css
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #f90;
+}
+
 @media screen and (min-width: 480px) {
 
   .main {

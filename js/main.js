@@ -22,6 +22,11 @@ $(document).ready(function() {
     // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
    });
 
+   // Hamburger menu event
+   $('.c-hamburger').click(function(e) {
+     e.preventDefault();
+     $(this).toggleClass('is-active');
+   })
 
 });
 
