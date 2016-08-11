@@ -16,10 +16,12 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     scrollBar:true,
     navigation: true,
-    navigationTooltips: ['firstPage', 'secondPage'],
+    navigationTooltips: ['Hello', 'Cruel', 'Cruel', 'World'],
     showActiveTooltip: false,
-    anchors:['firstPage', 'secondPage', 'thirdPage'],
-    // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+    verticalCentered: false,
+    anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
+    //sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+
    });
 
    // Hamburger menu event

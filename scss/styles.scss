@@ -286,7 +286,6 @@ a.logo {
     padding: 0 2em;
     margin: 0 auto;
     transition: .3s;
-    // transform: translateY(-10%);
 
     h1 {
       font-size: 7em;
@@ -333,7 +332,11 @@ a.logo {
 //fullpage.js custom css
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-  background: #f90;
+  // background: #f90;
+}
+
+#fp-nav ul li .fp-tooltip {
+  color: #000;
 }
 
 @media screen and (min-width: 480px) {
