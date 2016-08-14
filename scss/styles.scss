@@ -102,128 +102,106 @@ a.logo {
   transform: scaleX(1);
 }
 
+.off-canvas-nav {
+  display: block;
+  background: hsla(120, 50%, 50%, 1);
+  position: fixed;
+  z-index: 200;
+  width: 300px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateX(300px);
+  transition: transform 0.5s cubic-bezier(0, 0.94, 0.59, 1);
+
+  ul {
+    list-style: none;
+  }
+}
+.off-canvas-nav-link {
+  color: #fff;
+}
+
+.is-active .off-canvas-nav {
+  transform: translateX(0);
+}
 
 .c-hamburger {
   display: block;
-  position: fixed;
+  height: 32px;
+  width: 32px;
+  text-indent: -99999px;
   overflow: hidden;
-  top: 25px;
+  position: fixed;
+  top: 20px;
   right: 25px;
-  margin: 0;
-  padding: 0;
-  width: 66px;
-  height: 66px;
-  font-size: 0;
-  text-indent: -9999px;
-  appearance: none;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.3s;
-  z-index: 100;
+  z-index: 300;
 }
 
 .c-hamburger:focus {
   outline: none;
 }
 
-.c-hamburger span {
-  display: block;
-  position: absolute;
-  top: 31px;
-  left: 18px;
-  right: 18px;
-  height: 4px;
+.c-hamburger span,
+.c-hamburger span::before,
+.c-hamburger span::after {
   background: #333;
-  transition: transform 0.3s;
+  display: block;
+  width: 32px;
+  height: 2px;
+  position: absolute;
+  transition: .55s cubic-bezier(0, 0.94, 0.59, 1);
 }
 
-.is-scrolled .c-hamburger span {
-  background: #fff;
-}
-
-.is-scrolled .c-hamburger span::before,
-.is-scrolled .c-hamburger span::after {
-  background: #fff;
+.c-hamburger span {
+  top: 15px;
 }
 
 .c-hamburger span::before,
 .c-hamburger span::after {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #333;
-  content: "";
+  content: '';
 }
 
 .c-hamburger span::before {
-  top: -8px;
-  transform-origin: top right;
-  transition: transform 0.3s, width 0.3s, top 0.3s;
+  bottom: 7px;
 }
 
 .c-hamburger span::after {
-  bottom: -8px;
-  transform-origin: bottom right;
-  transition: transform 0.3s, width 0.3s, bottom 0.3s;
+  top: 7px;
 }
 
-/* active state, i.e. menu open */
-.c-hamburger:after {
-  content: '';
-  display: block;
-  position: absolute;
-  background: $secondary-color;
-  width: 76px;
-  height: 76px;
-  z-index: -1;
-  opacity: 0;
+.is-active .c-hamburger span {
+  background: #fff;
+  transform: rotate(180deg);
 }
 
-.is-scrolled .c-hamburger:after {
-  backface-visibility: hidden;
-  opacity: 1;
-  animation-name: bounceIn;
-  animation-duration: 0.4s;
-  animation-fill-mode: both;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-
-}
-
-.not-scrolled .c-hamburger:after {
-  backface-visibility: hidden;
-  opacity: 1;
-  animation-name: bounceOut;
-  animation-duration: 0.3s;
-  animation-fill-mode: both;
-  animation-timing-function: ease;
-  animation-delay: 0;
-}
-
-.c-hamburger.is-active {
-
-}
-
-.c-hamburger.is-active span {
-  transform: rotate(-180deg);
-}
-
-.c-hamburger.is-active span::before,
-.c-hamburger.is-active span::after {
+.is-active .c-hamburger span::before,
+.is-active .c-hamburger span::after {
+  background: #fff;
   width: 50%;
 }
 
-.c-hamburger.is-active span::before {
-  top: 0;
-  transform: translateX(16px) translateY(2px) rotate(45deg);
+.is-active .c-hamburger span::before {
+  transform: rotate(-45deg) translateX(-2px) translateY(0);
 }
 
-.c-hamburger.is-active span::after {
-  bottom: 0;
-  transform: translateX(16px) translateY(-2px) rotate(-45deg);
+.is-active .c-hamburger span::after {
+  transform: rotate(45deg) translateX(-2px) translateY(0);
 }
+
+.is-scrolled .c-hamburger {
+  // box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.is-scrolled .c-hamburger span {
+  background: #333;
+}
+
+.is-scrolled .c-hamburger span::before,
+.is-scrolled .c-hamburger span::after {
+  background: #333;
+}
+
 
 @keyframes bounceIn {
     0% {
@@ -276,6 +254,7 @@ a.logo {
     text-align: center;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     height: 100vh;
     margin: 0 auto;
     width: 100%;
@@ -361,7 +340,8 @@ a.logo {
     display: block;
   }
 
-  .c-hamburger {
+  .c-hamburger,
+  .off-canvas-nav {
     display: none;
   }
 
