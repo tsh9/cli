@@ -65,6 +65,7 @@ a.logo {
   line-height: 72px;
   padding-left: 1em;
 }
+
 .main-nav {
   display: none;
   padding-right: 1.4em;
@@ -85,7 +86,7 @@ a.logo {
 
   &:after {
     content: "";
-    border-bottom: 2px solid $secondary-color;
+    border-bottom: 2px solid hsl(120, 50%, 50%);
     height: 2px;
     position: absolute;
     left: 0;
@@ -267,6 +268,7 @@ a.logo {
     transition: .3s;
 
     h1 {
+      color: hsl(120, 50%, 50%);
       font-size: 7em;
       margin: 0;
     }
@@ -300,8 +302,8 @@ a.logo {
 
 .btn:hover {
   color: #fff;
-  background: $secondary-color;
-  border-color: $secondary-color;
+  background: hsl(120, 50%, 50%);
+  border-color: hsl(120, 50%, 50%);
 }
 
 #im-good {
