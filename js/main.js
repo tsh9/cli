@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // Transparent to opaque background for stucky header on srcoll
+  // Transparent to opaque background for sticky header on srcoll
   $(window).scroll(function() {
     if ($(this).scrollTop() > 1){
       $('.wrapper').addClass("is-scrolled");
@@ -10,19 +10,7 @@ $(document).ready(function() {
     }
   });
 
-  // fullpage.js : scrolls to section on page.
-  $('#fullpage').fullpage({
-    scrollBar:true,
-    navigation: true,
-    navigationTooltips: ['Hello', 'Cruel', 'Cruel', 'World'],
-    showActiveTooltip: false,
-    verticalCentered: false,
-    anchors:['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
-    //sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-
-   });
-
-   // Hamburger menu event
+  // Hamburger menu toggle
    $('.c-hamburger').click(function(e) {
      e.preventDefault();
      $('body').toggleClass('is-active');
@@ -34,4 +22,15 @@ $(document).ready(function() {
      $(this).toggleClass('is-active');
    });
 
+});
+
+// Smooth scroll to an element
+$('a[href^="#"]').on('click', function(event) {
+    var target = $(this.getAttribute('href'));
+    if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+            scrollTop: target.offset().top
+        }, 900);
+    }
 });

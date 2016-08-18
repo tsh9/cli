@@ -116,25 +116,11 @@ a.logo {
 
   ul {
     list-style: none;
-    text-transform: uppercase;
-    text-align: center;
-    padding-left: 0;
-    transform: translateY(200px);
   }
 }
 .off-canvas-nav-link {
-  display: inline-block;
   color: #fff;
-  width: 100%;
-  padding: .25em 0;
-  font-weight: 300;
-  letter-spacing: 0.15em;
 }
-
-.off-canvas-nav-link:hover {
-  background: hsla(0, 0, 0, 0.15);
-}
-
 
 .is-active .off-canvas-nav {
   transform: translateX(0);
@@ -332,37 +318,6 @@ a.logo {
   color: #000;
 }
 
-
-.section:first-child:after {
-  content: '\2193';
-  display: none;
-  font-size: 1.5em;
-  position: absolute;
-  bottom: 1em;
-  left: calc(50% - 25px);
-  height: 1em;
-  width: 1em;
-  border-radius: 50%;
-  padding: .2em;
-  line-height: 1em;
-  text-align: center;
-  animation: upDown 1.75s infinite ease-in-out;
-}
-
-@keyframes upDown {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(20px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
-}
-
 @media screen and (min-width: 480px) {
 
   .main {
@@ -381,8 +336,7 @@ a.logo {
 
 @media screen and (min-width: 720px) {
 
-  .main-nav,
-  .section:first-child:after {
+  .main-nav {
     display: block;
   }
 
